@@ -1,0 +1,73 @@
+/*
+*
+RESTful API
+two endpoints:
+
+First, for external company for pushing single competitor fare data to our application as json data.
+JSON structure mirrors the one from CSV
+
+Second, for obtaining overall statistics in form of json.
+JSON structure mirrors the one from CSV
+Statistics need to be aggregated at the level of market (tuple of origin, destination, date)
+Statistics details:
+marketId - id of given market, format: origin[date]destination
+maxCompetitor - airline with max fare on given market
+maxFare - max fare on given market
+minCompetitor - airline with min fare on given market
+minFare - min fare on given market
+avgFare - arithmetic average on given market
+
+
+how to run:
+1) run main method in FareCompetitorsInterfacesApplication
+
+2) postman: Post request localhost:8080/api/compData/
+*
+ example body request:
+ [
+  {
+  	"airline":"SV",
+  	"origin":"SVO",
+  	"destination":"DME",
+  	"date":"2017-12-27",
+  	"fare":117
+  },
+  {
+  	"airline":"N4",
+  	"origin":"LED",
+  	"destination":"DKRK",
+  	"date":"2017-12-27",
+  	"fare":257
+  },
+  { "airline":"SU",
+	"origin":"BT",
+	"destination":"WAW",
+	"date":"2017-12-27",
+	"fare":14
+  },
+    {
+  	"airline":"SV",
+  	"origin":"SVO",
+  	"destination":"DME",
+  	"date":"2017-12-27",
+  	"fare":117
+  },
+  {
+  	"airline":"N4",
+  	"origin":"LED",
+  	"destination":"DKRK",
+  	"date":"2017-12-27",
+  	"fare":257
+  },
+  { "airline":"SU",
+	"origin":"BT",
+	"destination":"WAW",
+	"date":"2017-12-27",
+	"fare":14
+  }
+]
+
+3) get Request to retrive data
+*
+*
+* */
